@@ -1,0 +1,10 @@
+{
+    "name": "vercel/docker-php",
+    "authors": [
+        {
+            "name": "Christopheroliver020",
+            "email": "christopherllegooliver020@gmail.com"
+        }
+    ],
+    "require": {}
+}
