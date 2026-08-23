@@ -1,0 +1,1110 @@
+/* =========================================================
+   POSTS PAGE
+   ========================================================= */
+
+.posts-page {
+    min-height: 100vh;
+    width: 100%;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(99, 102, 241, 0.10),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(59, 130, 246, 0.08),
+            transparent 35%
+        ),
+        var(--page-bg, #050505);
+
+    color: var(--page-text, #ffffff);
+    padding: 32px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.posts-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.posts-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+
+    margin-bottom: 32px;
+}
+
+.posts-header-content {
+    min-width: 0;
+}
+
+.posts-eyebrow {
+    display: block;
+
+    margin: 0 0 8px;
+
+    color: #818cf8;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.posts-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1;
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
+}
+
+.posts-description {
+    margin: 14px 0 0;
+
+    max-width: 600px;
+
+    color: #8f8f98;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+   ========================================================= */
+
+.posts-header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   DASHBOARD BUTTON
+   ========================================================= */
+
+.posts-dashboard-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 46px;
+
+    padding: 0 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: #d4d4d8;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.posts-dashboard-button:hover {
+    transform: translateY(-2px);
+
+    background: rgba(255, 255, 255, 0.09);
+
+    border-color: rgba(255, 255, 255, 0.18);
+
+    color: #ffffff;
+}
+
+.posts-dashboard-icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   CREATE BUTTON
+   ========================================================= */
+
+.posts-create-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    flex-shrink: 0;
+
+    min-height: 46px;
+
+    padding: 0 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #050505;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.posts-create-button:hover {
+    transform: translateY(-2px);
+
+    background: #f1f1f1;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.posts-create-icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   SUCCESS ALERT
+   ========================================================= */
+
+.posts-alert {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 24px;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(74, 222, 128, 0.18);
+    border-radius: 14px;
+
+    background: rgba(34, 197, 94, 0.08);
+
+    color: #bbf7d0;
+
+    font-size: 14px;
+}
+
+.posts-alert-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: rgba(34, 197, 94, 0.15);
+
+    color: #4ade80;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   POSTS FEED
+   ========================================================= */
+
+.posts-feed {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   POST CARD
+   ========================================================= */
+
+.post-card {
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.post-card:hover {
+    border-color: rgba(255, 255, 255, 0.14);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   POST TOP
+   ========================================================= */
+
+.post-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    padding: 22px 24px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   POST USER
+   ========================================================= */
+
+.post-user {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    min-width: 0;
+}
+
+.post-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    flex: 0 0 44px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #3b82f6
+        );
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.post-user-info {
+    min-width: 0;
+}
+
+.post-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   POST META
+   ========================================================= */
+
+.post-meta {
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 9px;
+
+    color: #71717a;
+
+    font-size: 12px;
+}
+
+.post-meta-dot {
+    color: #3f3f46;
+}
+
+
+/* =========================================================
+   POST STATUS
+   ========================================================= */
+
+.post-status {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 4px 8px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+}
+
+.post-status.published {
+    border: 1px solid rgba(74, 222, 128, 0.15);
+
+    background: rgba(34, 197, 94, 0.10);
+
+    color: #86efac;
+}
+
+.post-status.draft {
+    border: 1px solid rgba(250, 204, 21, 0.15);
+
+    background: rgba(234, 179, 8, 0.10);
+
+    color: #fde047;
+}
+
+
+/* =========================================================
+   POST ACTIONS
+   ========================================================= */
+
+.post-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+.post-delete-form {
+    margin: 0;
+}
+
+
+/* =========================================================
+   POST ACTION BUTTON
+   ========================================================= */
+
+.post-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 34px;
+
+    padding: 0 11px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.post-action:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EDIT
+   ========================================================= */
+
+.post-action.edit {
+    border: 1px solid rgba(129, 140, 248, 0.18);
+
+    background: rgba(99, 102, 241, 0.08);
+
+    color: #a5b4fc;
+}
+
+.post-action.edit:hover {
+    background: rgba(99, 102, 241, 0.18);
+
+    border-color: rgba(129, 140, 248, 0.30);
+}
+
+
+/* =========================================================
+   DELETE
+   ========================================================= */
+
+.post-action.delete {
+    border: 1px solid rgba(248, 113, 113, 0.15);
+
+    background: rgba(239, 68, 68, 0.07);
+
+    color: #fca5a5;
+}
+
+.post-action.delete:hover {
+    background: rgba(239, 68, 68, 0.16);
+
+    border-color: rgba(248, 113, 113, 0.25);
+}
+
+
+/* =========================================================
+   POST CONTENT
+   ========================================================= */
+
+.post-content {
+    padding: 22px 24px;
+
+    color: #b4b4bc;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    white-space: pre-wrap;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   MEDIA
+   ========================================================= */
+
+.post-media {
+    width: 100%;
+
+    background: #000000;
+}
+
+.post-media img,
+.post-media video {
+    display: block;
+
+    width: 100%;
+
+    max-height: 650px;
+
+    object-fit: contain;
+}
+
+.post-media img {
+    max-height: 600px;
+
+    margin: 0 auto;
+}
+
+.post-media video {
+    background: #000000;
+}
+
+
+/* =========================================================
+   POST FOOTER
+   ========================================================= */
+
+.post-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 14px 24px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    color: #52525b;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.posts-empty {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 420px;
+
+    padding: 40px;
+
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    text-align: center;
+}
+
+.posts-empty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: #a5b4fc;
+
+    font-size: 28px;
+}
+
+.posts-empty h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.posts-empty p {
+    margin: 8px 0 24px;
+
+    color: #71717a;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.posts-pagination {
+    margin-top: 28px;
+
+    overflow-x: auto;
+}
+
+.posts-pagination nav {
+    display: flex;
+
+    justify-content: center;
+}
+
+.posts-pagination svg {
+    width: 18px;
+    height: 18px;
+}
+
+.posts-pagination a,
+.posts-pagination span {
+    color: #a1a1aa !important;
+}
+
+
+/* =========================================================
+   PAGINATION DARK GLASS
+   ========================================================= */
+
+.posts-pagination nav > *,
+.posts-pagination nav a,
+.posts-pagination nav span {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+
+    background: rgba(255, 255, 255, 0.03) !important;
+
+    color: #a1a1aa !important;
+}
+
+.posts-pagination nav a:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .posts-page {
+        padding: 22px 16px 40px;
+    }
+
+    .posts-header {
+        align-items: stretch;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        margin-bottom: 24px;
+    }
+
+    .posts-title {
+        font-size: 36px;
+    }
+
+    .posts-description {
+        font-size: 14px;
+    }
+
+
+    /* Header buttons */
+
+    .posts-header-actions {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .posts-dashboard-button,
+    .posts-header-actions .posts-create-button {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    /* Cards */
+
+    .post-card {
+        border-radius: 16px;
+    }
+
+    .post-card-top {
+        flex-direction: column;
+
+        gap: 18px;
+
+        padding: 18px;
+    }
+
+
+    /* Actions */
+
+    .post-actions {
+        width: 100%;
+    }
+
+    .post-action {
+        flex: 1;
+    }
+
+
+    /* Content */
+
+    .post-content {
+        padding: 18px;
+
+        font-size: 14px;
+    }
+
+
+    /* Media */
+
+    .post-media img,
+    .post-media video {
+        max-height: 450px;
+    }
+
+
+    /* Footer */
+
+    .post-footer {
+        padding: 13px 18px;
+
+        font-size: 10px;
+    }
+
+
+    /* Empty */
+
+    .posts-empty {
+        min-height: 360px;
+
+        padding: 30px 20px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+    .posts-page {
+        padding: 20px 12px 40px;
+    }
+
+    .posts-header {
+        gap: 18px;
+
+        margin-bottom: 20px;
+    }
+
+    .posts-title {
+        font-size: 32px;
+    }
+
+    .posts-description {
+        margin-top: 10px;
+
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+
+    /* Header actions */
+
+    .posts-header-actions {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 8px;
+    }
+
+    .posts-dashboard-button,
+    .posts-create-button {
+        min-height: 44px;
+
+        padding: 0 12px;
+
+        font-size: 12px;
+    }
+
+    .posts-dashboard-icon,
+    .posts-create-icon {
+        font-size: 16px;
+    }
+
+
+    /* Card */
+
+    .post-card {
+        border-radius: 15px;
+    }
+
+    .post-card-top {
+        padding: 16px;
+
+        gap: 16px;
+    }
+
+
+    /* User */
+
+    .post-avatar {
+        width: 40px;
+        height: 40px;
+
+        flex-basis: 40px;
+
+        font-size: 14px;
+    }
+
+    .post-title {
+        font-size: 17px;
+    }
+
+    .post-meta {
+        margin-top: 7px;
+
+        font-size: 11px;
+    }
+
+
+    /* Actions */
+
+    .post-actions {
+        gap: 6px;
+    }
+
+    .post-action {
+        min-height: 36px;
+
+        padding: 0 8px;
+
+        font-size: 11px;
+    }
+
+
+    /* Content */
+
+    .post-content {
+        padding: 16px;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+
+    /* Media */
+
+    .post-media img,
+    .post-media video {
+        max-height: 400px;
+    }
+
+
+    /* Footer */
+
+    .post-footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 5px;
+
+        padding: 12px 16px;
+    }
+
+
+    /* Empty */
+
+    .posts-empty {
+        min-height: 320px;
+
+        padding: 25px 18px;
+    }
+
+    .posts-empty h2 {
+        font-size: 18px;
+    }
+
+    .posts-empty p {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .posts-page {
+        padding: 18px 10px 32px;
+    }
+
+    .posts-title {
+        font-size: 30px;
+    }
+
+    .posts-eyebrow {
+        font-size: 10px;
+    }
+
+    .posts-description {
+        font-size: 13px;
+    }
+
+
+    /* Stack header buttons */
+
+    .posts-header-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .posts-dashboard-button,
+    .posts-create-button {
+        width: 100%;
+    }
+
+
+    /* Card */
+
+    .post-card-top {
+        padding: 15px;
+    }
+
+    .post-title {
+        font-size: 16px;
+    }
+
+    .post-meta {
+        font-size: 10px;
+    }
+
+
+    /* Actions */
+
+    .post-action {
+        min-height: 36px;
+
+        padding: 0 7px;
+
+        font-size: 10px;
+    }
+
+
+    /* Content */
+
+    .post-content {
+        padding: 15px;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+
+    /* Media */
+
+    .post-media img,
+    .post-media video {
+        max-height: 350px;
+    }
+
+
+    /* Empty */
+
+    .posts-empty {
+        min-height: 300px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .posts-page {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .posts-title {
+        font-size: 28px;
+    }
+
+    .posts-header-actions {
+        gap: 7px;
+    }
+
+    .posts-dashboard-button,
+    .posts-create-button {
+        min-height: 42px;
+
+        font-size: 11px;
+    }
+
+    .post-card-top {
+        padding: 13px;
+    }
+
+    .post-content {
+        padding: 13px;
+    }
+
+    .post-footer {
+        padding: 11px 13px;
+    }
+}

@@ -1,0 +1,1388 @@
+/* =========================================================
+   VISITORS PAGE
+   ========================================================= */
+
+.visitors-page {
+    min-height: 100vh;
+    width: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(99, 102, 241, 0.10),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(59, 130, 246, 0.08),
+            transparent 35%
+        ),
+        #050505;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.visitors-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.visitors-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 25px;
+    margin-bottom: 28px;
+}
+
+.visitors-header-content {
+    min-width: 0;
+}
+
+.visitors-eyebrow {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #818cf8;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.visitors-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1;
+
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.visitors-description {
+    max-width: 600px;
+
+    margin: 12px 0 0;
+
+    color: #8f8f98;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   DASHBOARD BUTTON
+   ========================================================= */
+
+.visitors-dashboard-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 44px;
+
+    padding: 0 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 11px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: #d4d4d8;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.visitors-dashboard-button:hover {
+    transform: translateY(-2px);
+
+    background: rgba(255, 255, 255, 0.09);
+
+    border-color: rgba(255, 255, 255, 0.18);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   VISITOR LIST
+   ========================================================= */
+
+.visitors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+/* =========================================================
+   VISITOR CARD
+   ========================================================= */
+
+.visitor-card {
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.visitor-card:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.visitor-card-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px 22px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.visitor-identity {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+
+.visitor-avatar {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #3b82f6
+        );
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   VISITOR INFO
+   ========================================================= */
+
+.visitor-main-info {
+    min-width: 0;
+}
+
+.visitor-title {
+    margin: 0 0 3px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.visitor-ip {
+    margin: 0;
+
+    color: #71717a;
+
+    font-size: 12px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.visitor-time {
+    flex-shrink: 0;
+
+    color: #71717a;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   DETAILS
+   ========================================================= */
+
+.visitor-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 1px;
+
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.visitor-detail {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    min-width: 0;
+
+    padding: 17px 20px;
+
+    background: rgba(5, 5, 5, 0.75);
+}
+
+.visitor-detail-label {
+    color: #52525b;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+.visitor-detail-value {
+    color: #d4d4d8;
+
+    font-size: 13px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.visitor-page-value {
+    color: #a5b4fc;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.visitor-card-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 14px 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.visitor-created {
+    color: #71717a;
+
+    font-size: 11px;
+}
+
+.visitor-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 25px;
+
+    padding: 0 9px;
+
+    border: 1px solid rgba(74, 222, 128, 0.15);
+
+    border-radius: 999px;
+
+    background: rgba(34, 197, 94, 0.08);
+
+    color: #86efac;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.visitors-empty {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    min-height: 320px;
+
+    padding: 40px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.02)
+        );
+
+    text-align: center;
+}
+
+.visitors-empty-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: #818cf8;
+
+    font-size: 22px;
+}
+
+.visitors-empty h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 18px;
+}
+
+.visitors-empty p {
+    max-width: 420px;
+
+    margin: 8px 0 0;
+
+    color: #71717a;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.visitors-pagination {
+    margin-top: 24px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .visitors-page {
+        padding: 24px 16px 50px;
+    }
+
+    .visitors-header {
+        align-items: stretch;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .visitors-dashboard-button {
+        width: fit-content;
+    }
+
+    .visitor-details {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+    .visitors-page {
+        padding: 20px 12px 40px;
+    }
+
+    .visitors-title {
+        font-size: 30px;
+    }
+
+    .visitors-description {
+        font-size: 13px;
+    }
+
+    .visitors-dashboard-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .visitor-card {
+        border-radius: 16px;
+    }
+
+    .visitor-card-header {
+        align-items: flex-start;
+
+        padding: 17px;
+
+        flex-direction: column;
+    }
+
+    .visitor-time {
+        margin-left: 55px;
+    }
+
+    .visitor-details {
+        grid-template-columns: 1fr;
+    }
+
+    .visitor-detail {
+        padding: 14px 17px;
+    }
+
+    .visitor-card-footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 14px 17px;
+    }
+
+    .visitor-status {
+        order: -1;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .visitors-page {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .visitor-card {
+        border-radius: 14px;
+    }
+
+    .visitor-card-header {
+        padding: 14px;
+    }
+
+    .visitor-details {
+        display: block;
+    }
+
+    .visitor-detail {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .visitor-card-footer {
+        padding: 13px 14px;
+    }
+
+}
+
+.visitor-user-agent {
+    grid-column: span 2;
+}
+
+.visitor-user-agent .visitor-detail-value {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+
+    .visitor-user-agent {
+        grid-column: span 1;
+    }
+
+}
+
+/* =========================================================
+   VISITORS PAGE
+   ========================================================= */
+
+.visitors-page {
+    min-height: 100vh;
+    background: #050505;
+    color: #ffffff;
+    padding: 40px 24px;
+}
+
+.visitors-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.visitors-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.visitors-eyebrow {
+    display: block;
+    margin-bottom: 10px;
+    color: #818cf8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.visitors-title {
+    margin: 0;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.visitors-description {
+    margin: 10px 0 0;
+    color: #888;
+    font-size: 15px;
+}
+
+.visitors-dashboard-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 18px;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    color: #fff;
+    background: #111;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.visitors-dashboard-button:hover {
+    border-color: #555;
+    background: #181818;
+}
+
+
+/* VISITOR LIST */
+
+.visitors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.visitor-card {
+    overflow: hidden;
+    border: 1px solid #202020;
+    border-radius: 16px;
+    background: #0b0b0b;
+    transition: 0.2s ease;
+}
+
+.visitor-card:hover {
+    border-color: #333;
+    transform: translateY(-1px);
+}
+
+.visitor-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #1c1c1c;
+    background: #0e0e0e;
+}
+
+.visitor-number {
+    color: #818cf8;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.visitor-time {
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* MAIN */
+
+.visitor-main {
+    padding: 22px 20px;
+}
+
+.visitor-ip-section {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 25px;
+}
+
+.visitor-label {
+    color: #666;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.visitor-ip {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+/* DETAILS */
+
+.visitor-details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.visitor-detail {
+    min-width: 0;
+    padding: 15px;
+    border: 1px solid #1c1c1c;
+    border-radius: 10px;
+    background: #090909;
+}
+
+.visitor-value {
+    display: block;
+    margin-top: 7px;
+    overflow: hidden;
+    color: #bbb;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* USER AGENT */
+
+.visitor-user-agent {
+    padding: 16px 20px;
+    border-top: 1px solid #1c1c1c;
+}
+
+.visitor-user-agent p {
+    margin: 8px 0 0;
+    overflow-wrap: anywhere;
+    color: #777;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* EMPTY */
+
+.visitors-empty {
+    padding: 80px 20px;
+    border: 1px dashed #292929;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.visitors-empty-icon {
+    margin-bottom: 15px;
+    color: #818cf8;
+    font-size: 35px;
+}
+
+.visitors-empty h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.visitors-empty p {
+    margin-top: 8px;
+    color: #777;
+}
+
+
+/* PAGINATION */
+
+.visitors-pagination {
+    margin-top: 25px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .visitors-page {
+        padding: 25px 15px;
+    }
+
+    .visitors-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .visitors-dashboard-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .visitor-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .visitors-page {
+        padding: 20px 12px;
+    }
+
+    .visitor-card-header {
+        padding: 14px;
+    }
+
+    .visitor-main {
+        padding: 18px 14px;
+    }
+
+    .visitor-details {
+        grid-template-columns: 1fr;
+    }
+
+    .visitor-ip {
+        font-size: 17px;
+    }
+
+}
+
+/* =========================================================
+   VISITORS PAGE
+========================================================= */
+
+.visitors-page {
+    min-height: 100vh;
+    width: 100%;
+    background: #080b12;
+    color: #ffffff;
+    padding: 2rem 0;
+}
+
+.visitors-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.visitors-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.visitors-eyebrow {
+    display: block;
+    margin-bottom: 0.5rem;
+
+    color: #818cf8;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.visitors-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 2.25rem;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.visitors-description {
+    margin-top: 0.5rem;
+
+    color: #9ca3af;
+
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+   DASHBOARD BUTTON
+========================================================= */
+
+.visitors-dashboard-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    flex-shrink: 0;
+
+    padding: 0.7rem 1rem;
+
+    color: #e5e7eb;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 0.75rem;
+
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.visitors-dashboard-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+
+    border-color: rgba(255, 255, 255, 0.2);
+
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   VISITOR LIST
+========================================================= */
+
+.visitors-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+}
+
+/* =========================================================
+   VISITOR CARD
+========================================================= */
+
+.visitor-card {
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 1rem;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.visitor-card:hover {
+    background: rgba(255, 255, 255, 0.045);
+
+    border-color: rgba(255, 255, 255, 0.18);
+
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.visitor-card-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    padding: 1.25rem;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.visitor-identity {
+    display: flex;
+    align-items: center;
+
+    min-width: 0;
+
+    gap: 1rem;
+}
+
+.visitor-avatar {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 2.75rem;
+    height: 2.75rem;
+
+    flex-shrink: 0;
+
+    color: #818cf8;
+
+    background: rgba(99, 102, 241, 0.1);
+
+    border-radius: 0.75rem;
+
+    font-weight: 700;
+}
+
+.visitor-main-info {
+    min-width: 0;
+}
+
+.visitor-card .visitor-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.visitor-ip {
+    margin-top: 0.15rem;
+
+    overflow: hidden;
+
+    color: #9ca3af;
+
+    font-size: 0.875rem;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.visitor-time {
+    flex-shrink: 0;
+
+    color: #6b7280;
+
+    font-size: 0.875rem;
+}
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.visitor-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 1px;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.visitor-detail {
+    min-width: 0;
+
+    padding: 1.25rem;
+
+    background: #080b12;
+}
+
+.visitor-detail-label {
+    display: block;
+
+    margin-bottom: 0.4rem;
+
+    color: #6b7280;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+.visitor-detail-value {
+    display: block;
+
+    color: #e5e7eb;
+
+    font-size: 0.875rem;
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+.visitor-page-value {
+    color: #a5b4fc;
+}
+
+.visitor-user-agent {
+    min-width: 0;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.visitor-card-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    padding: 1rem 1.25rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.visitor-created {
+    color: #6b7280;
+
+    font-size: 0.75rem;
+}
+
+.visitor-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.4rem;
+
+    padding: 0.3rem 0.7rem;
+
+    color: #34d399;
+
+    background: rgba(16, 185, 129, 0.1);
+
+    border-radius: 999px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.visitor-status::before {
+    content: '';
+
+    width: 0.375rem;
+    height: 0.375rem;
+
+    background: #34d399;
+
+    border-radius: 50%;
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.visitors-empty {
+    min-height: 350px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.02);
+
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+
+    border-radius: 1rem;
+}
+
+.visitors-empty-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 3.5rem;
+    height: 3.5rem;
+
+    margin-bottom: 1.25rem;
+
+    color: #818cf8;
+
+    background: rgba(99, 102, 241, 0.1);
+
+    border-radius: 1rem;
+
+    font-size: 1.25rem;
+}
+
+.visitors-empty h2 {
+    color: #ffffff;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.visitors-empty p {
+    max-width: 24rem;
+
+    margin-top: 0.5rem;
+
+    color: #6b7280;
+
+    font-size: 0.875rem;
+
+    line-height: 1.6;
+}
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.visitors-pagination {
+    margin-top: 1.5rem;
+
+    overflow-x: auto;
+}
+
+.visitors-pagination nav {
+    width: max-content;
+    min-width: 100%;
+}
+
+.visitors-pagination svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.visitors-pagination a,
+.visitors-pagination span {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 2.25rem;
+    height: 2.25rem;
+
+    padding: 0 0.75rem;
+
+    color: #9ca3af;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    font-size: 0.875rem;
+}
+
+.visitors-pagination a:hover {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.visitors-pagination span[aria-current="page"] {
+    color: #ffffff;
+
+    background: rgba(99, 102, 241, 0.3);
+
+    border-color: rgba(129, 140, 248, 0.4);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .visitors-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .visitors-dashboard-button {
+        width: fit-content;
+    }
+
+    .visitor-details {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+
+    .visitors-page {
+        padding: 1.25rem 0;
+    }
+
+    .visitors-container {
+        padding: 0 0.75rem;
+    }
+
+    .visitors-title {
+        font-size: 1.875rem;
+    }
+
+    .visitors-description {
+        font-size: 0.875rem;
+    }
+
+    .visitor-card-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .visitor-time {
+        padding-left: 3.75rem;
+    }
+
+    .visitor-details {
+        grid-template-columns: 1fr;
+    }
+
+    .visitor-card-footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+}
+

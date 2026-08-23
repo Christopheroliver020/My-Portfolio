@@ -1,0 +1,444 @@
+/* =========================================================
+   PROFILE PAGE
+   Dark modern theme — matches dashboard/home
+   ========================================================= */
+
+.profile-page {
+    min-height: 100vh;
+    background: #0b0f19;
+    color: #ffffff;
+    padding: 48px 24px 80px;
+}
+
+.profile-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.profile-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 32px;
+}
+
+.profile-eyebrow {
+    margin: 0 0 7px;
+    color: #818cf8;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.profile-header h1 {
+    margin: 0;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 750;
+    letter-spacing: -0.03em;
+}
+
+.profile-description {
+    max-width: 650px;
+    margin: 10px 0 0;
+    color: #6b7280;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.profile-back {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.04);
+    color: #d1d5db;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.profile-back:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(129, 140, 248, 0.35);
+    color: #ffffff;
+    transform: translateX(-2px);
+}
+
+/* =========================
+   CARDS
+   ========================= */
+
+.profile-card {
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+
+    background: #111827;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.18);
+
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.profile-card:hover {
+    border-color: rgba(129, 140, 248, 0.22);
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* subtle top glow */
+
+.profile-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(99, 102, 241, 0.55),
+        transparent
+    );
+
+    opacity: 0.7;
+}
+
+/* =========================
+   CARD HEADING
+   ========================= */
+
+.profile-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 26px 30px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.profile-card-heading h2 {
+    margin: 0;
+    color: #f9fafb;
+    font-size: 17px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+}
+
+.profile-card-heading p {
+    margin: 5px 0 0;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =========================
+   ICONS
+   ========================= */
+
+.profile-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+}
+
+.profile-card-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.profile-icon-indigo {
+    background: rgba(99, 102, 241, 0.11);
+    color: #818cf8;
+}
+
+.profile-icon-blue {
+    background: rgba(59, 130, 246, 0.11);
+    color: #60a5fa;
+}
+
+.profile-icon-red {
+    background: rgba(239, 68, 68, 0.11);
+    color: #f87171;
+}
+
+/* =========================
+   FORM AREA
+   ========================= */
+
+.profile-form-container {
+    padding: 30px;
+}
+
+/*
+   Breeze form components normally have Tailwind
+   classes on their own elements.
+
+   These rules override the visual appearance so
+   the forms match this page.
+*/
+
+.profile-form-container label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: #d1d5db;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.profile-form-container input,
+.profile-form-container textarea,
+.profile-form-container select {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #0b0f19;
+    color: #f9fafb;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.profile-form-container input:focus,
+.profile-form-container textarea:focus,
+.profile-form-container select:focus {
+    border-color: rgba(99, 102, 241, 0.75);
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.12);
+
+    background: #0d1220;
+}
+
+.profile-form-container input::placeholder,
+.profile-form-container textarea::placeholder {
+    color: #4b5563;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.profile-form-container button {
+    border-radius: 10px;
+    padding: 10px 17px;
+
+    border: 1px solid transparent;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.profile-form-container button:hover {
+    transform: translateY(-1px);
+}
+
+/* Primary buttons */
+
+.profile-form-container button[type="submit"] {
+    background: #4f46e5;
+    color: #ffffff;
+}
+
+.profile-form-container button[type="submit"]:hover {
+    background: #6366f1;
+}
+
+/* =========================
+   SUCCESS MESSAGE
+   ========================= */
+
+.profile-form-container .text-sm {
+    color: #9ca3af;
+}
+
+.profile-form-container .text-green-600,
+.profile-form-container .text-green-500 {
+    color: #34d399;
+}
+
+/* =========================
+   DANGER CARD
+   ========================= */
+
+.profile-danger-card {
+    border-color: rgba(239, 68, 68, 0.12);
+}
+
+.profile-danger-card:hover {
+    border-color: rgba(239, 68, 68, 0.28);
+}
+
+.profile-danger-card::before {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(239, 68, 68, 0.45),
+        transparent
+    );
+}
+
+.profile-danger-card .profile-form-container button[type="submit"] {
+    background: #dc2626;
+}
+
+.profile-danger-card .profile-form-container button[type="submit"]:hover {
+    background: #ef4444;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .profile-page {
+        padding: 30px 16px 60px;
+    }
+
+    .profile-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .profile-header h1 {
+        font-size: 28px;
+    }
+
+    .profile-description {
+        font-size: 14px;
+    }
+
+    .profile-back {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .profile-card {
+        border-radius: 15px;
+    }
+
+    .profile-card-heading {
+        align-items: flex-start;
+        padding: 21px;
+    }
+
+    .profile-card-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .profile-card-heading h2 {
+        font-size: 16px;
+    }
+
+    .profile-card-heading p {
+        font-size: 12px;
+    }
+
+    .profile-form-container {
+        padding: 21px;
+    }
+}
+
+/* =========================
+   SMALL PHONES
+   ========================= */
+
+@media (max-width: 480px) {
+
+    .profile-page {
+        padding: 24px 12px 50px;
+    }
+
+    .profile-header h1 {
+        font-size: 25px;
+    }
+
+    .profile-card-heading {
+        gap: 12px;
+    }
+
+    .profile-card-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+    }
+
+    .profile-card-icon svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    .profile-form-container {
+        padding: 18px;
+    }
+
+    .profile-form-container input,
+    .profile-form-container textarea,
+    .profile-form-container select {
+        padding: 11px 12px;
+        font-size: 13px;
+    }
+}
